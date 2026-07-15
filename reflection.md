@@ -2,6 +2,49 @@
 
 ## 1. System Design
 
+Worked with Richard Devitt and Badhan Barua 
+
+Step 1: Understand the Problem 
+
+3 core actions that the user should be able to perform: 
+
+* add a pet 
+* add/edit/delete a activity 
+* see activities / view schedule/calendar 
+
+Step 2: List the Building Blocks
+
+Brainstorm the main objects needed for the system. For each object, determine:
+
+What information it needs to hold (attributes)
+
+What actions it can perform (methods)
+
+Objects (attributes and methods listed as bullet points 
+
+* pet 
+    - petID PK 
+    - name 
+    - type 
+    - age 
+    - activities - list of activityIDs 
+* pet-activity 
+    - pet-activityID PK 
+    - petID FK 
+    - activity FK 
+    - priority int (0-5)
+    - owner_preferences int (0-5)
+* activity 
+    - activityID  PK 
+    - type (ex: walks, feeding, meds, enrichment, grooming,etc) 
+    - duration 
+    - timeStart 
+    - timeEnd 
+* calendar 
+    - calendarID 
+    - list of acitivityIDs 
+    - method to track available times 
+
 **a. Initial design**
 
 - Briefly describe your initial UML design.
@@ -11,6 +54,15 @@
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+
+
+* I need to change the type ot Mermaid class and edit diagrams/uml.mmd 
+    - I definitely should've reviewed the step 
+* calendar should include petActivityIds instead 
+* timeStart and timeEnd should be on petActivityIds 
+    - having duration and timeStart and timeEnd together are redundant 
+* 
 
 ---
 
